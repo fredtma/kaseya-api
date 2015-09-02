@@ -1,0 +1,33 @@
+{
+  "name": "todo",
+  "version": "0.0.1",
+  "description": "todo",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TODO"
+  },
+  "author": "TODO",
+  "license": "Private",
+  "dependencies": {
+    "app-root-path": "1.0.0",
+    "basic-auth": "1.0.3",
+    "body-parser": "1.13.3",
+    "express": "4.13.3",
+    "morgan": "1.6.1",
+    "node-rest-client": "1.5.1",
+    "winston": "1.0.1",
+    "winston-loggly": "1.1.0"
+  },
+  "devDependencies": {
+    "deepmerge": "0.2.10",
+    "gulp": "3.9.0",
+    "gulp-jshint": "1.11.2",
+    "gulp-nodemon": "2.0.4",
+    "gulp-shell": "0.4.3",
+    "yargs": "3.23.0"
+  }
+}
