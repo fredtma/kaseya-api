@@ -16,9 +16,10 @@
     "app-root-path": "1.0.0",
     "basic-auth": "1.0.3",
     "body-parser": "1.13.3",
-    "express": "4.13.3",
+    "express": "^4.13.3",
     "morgan": "1.6.1",
     "node-rest-client": "1.5.1",
+    "soap": "^0.12.0",
     "winston": "1.0.1",
     "winston-loggly": "1.1.0"
   },

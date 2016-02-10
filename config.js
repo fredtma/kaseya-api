@@ -1,6 +1,6 @@
 module.exports={
     defaults:{
-        port:6789,
+        port:9999,
         appName: 'todo',
         loggly: {
             username: '',

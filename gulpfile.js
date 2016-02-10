@@ -1,11 +1,11 @@
-var gulp = require("gulp");
-var jshint = require("gulp-jshint");
+var gulp    = require("gulp");
+var jshint  = require("gulp-jshint");
 var nodemon = require("gulp-nodemon");
-var shell = require("gulp-shell");
-var argv = require('yargs').argv;
-var fs = require("fs");
+var shell   = require("gulp-shell");
+var argv    = require('yargs').argv;
+var fs      = require("fs");
 var jsFiles = ["./**/*.js", "index.js"];
-var merge = require("deepmerge");
+var merge   = require("deepmerge");
 
 gulp.task("install", shell.task("npm install"));
 
@@ -27,9 +27,9 @@ gulp.task("config", function () {
     var environment = argv.target || "dev";
     console.log("writing config for %s", environment);
     var configs = require("./config.js");
-    var defaults = configs['defaults'];
-    var specific = configs[environment];
-    var output = merge(defaults, specific);
+    var defaults= configs['defaults'];
+    var specific= configs[environment];
+    var output  = merge(defaults, specific);
     fs.writeFileSync("config.json", JSON.stringify(output));
 });
 
@@ -38,7 +38,7 @@ gulp.task("serve", ["config"], function () {
         script: 'index.js',
         ext: 'html js json'
     })
-        .on("restart", function () {
-            console.log("nodemon - restarted!");
-        });
+    .on("restart", function () {
+        console.log("nodemon - restarted!");
+    });
 });
