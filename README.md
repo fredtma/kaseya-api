@@ -1,2 +1,1 @@
-# nodeSeed
-NodeJs Seed
+# kaseya-api
