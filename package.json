@@ -17,6 +17,7 @@
     "basic-auth": "1.0.3",
     "body-parser": "1.13.3",
     "express": "^4.13.3",
+    "express-session": "^1.13.0",
     "morgan": "1.6.1",
     "node-rest-client": "1.5.1",
     "soap": "^0.12.0",
