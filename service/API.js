@@ -1,8 +1,7 @@
 "use strict";
 var soap = require('soap');
-
-module.exports = class API{
-    const HASH = "SHA-1";
+module.exports = class API
+{
 
     constructor(url, set)
     {
@@ -12,19 +11,22 @@ module.exports = class API{
         this.options    = set.options||{};
     }
 
+    cycle(req, res, next)
+    {
+        this.req = req;
+        this.res = res;
+        this.next= next;
+    }
     soap(options)
     {
+        let url = this.url;
+        options = options||this.options;
         return new Promise(function(resolve, reject){
-            soap.createClient(this.url, options, function(err, client) {
+            soap.createClient(url, options, function(err, client) {
                 if(err) reject(err, client);
                 resolve(client);
             });
         });
     }
 
-    arg()
-    {
-        let args= {req:{}};
-        arg.reg = {user, pass}
-    }
 };
