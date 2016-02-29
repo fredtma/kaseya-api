@@ -11,7 +11,10 @@ module.exports = class KASEYA extends API
     connect(call, args)
     {
         var self = this;
-        return super.soap(this.options).then(function(client){
+        return super.soap(this.options).then(success).catch(failed);//super.soap
+
+        function success(client)
+        {
             return new Promise(function(resolve, reject){
                 let caller;
 
@@ -49,7 +52,14 @@ module.exports = class KASEYA extends API
                     resolve(result);
                 });//caller
             });//promise
-        });//super.soap
+        }
+
+        function failed(err, kaseya)
+        {
+            console.log(err);
+            console.log(kaseya.describe());
+            console.log(kaseya);
+        }
     }
 };
 
