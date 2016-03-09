@@ -37,7 +37,6 @@ module.exports = class KASEYA extends API
                     let key;
                     let status;
                     for (key in result) break;
-console.log("WHITE", key, err);
 
                     if(err)  {
                         status          = 410;
@@ -57,8 +56,8 @@ console.log("WHITE", key, err);
                         self.next(error);
                         return reject(error, result);
                     }
-                    console.log("RAW",raw);
-                    console.log("soapHeader",soapHeader, err);
+                    //console.log("RAW",raw);
+                    //console.log("soapHeader",soapHeader, err);
                     resolve(result);
                 });//caller
             });//promise
