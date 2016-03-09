@@ -98,6 +98,7 @@ function group(req, res)
 {
     var ip  = req.v1.ip;
     var args= {"req": {"BrowserIP":  ip, "SessionID":  req.v1.kaseyaSess}};
+    console.log('group', args);
     KASEYA.connect('group', args).then(callback);
     function callback(result){
         result.GetMachineGroupListResult.MachineGroups.groupName.sort();
