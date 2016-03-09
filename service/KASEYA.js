@@ -31,13 +31,13 @@ module.exports = class KASEYA extends API
                     default:
                         caller = client.KaseyaWS.KaseyaWSSoap.Authenticate;
                 }
-
+console.log("SNOW",call, args);
                 caller(args, function(err, result, raw, soapHeader)
                 {
                     let key;
                     let status;
                     for (key in result) break;
-
+console.log("WHITE", key, err);
                     if(err || result[key].ErrorMessage)  {
                         status          = result[key].ErrorMessage.indexOf('Session')!==-1? 401: 410;
                         let error       = new Error(err);
@@ -47,7 +47,7 @@ module.exports = class KASEYA extends API
                         self.next(error);
                         return reject(error, result);
                     }
-                    //console.log("RAW",raw);
+                    console.log("RAW",raw);
                     console.log("soapHeader",soapHeader, err);
                     resolve(result);
                 });//caller
