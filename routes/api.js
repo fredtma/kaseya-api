@@ -6,7 +6,7 @@ var _       = require('lodash');
 
 var API     = require('../service/KASEYA.js')
 var hash256 = require('../service/hash256').coverPass256;
-var KASEYA  = new API("assets/KaseyaWS.asmx.xml", {"options":{"endpoint":"http://support.xpandit.co.za/vsaWS/KaseyaWS.asmx"}});
+var KASEYA  = new API("assets/KaseyaWS.asmx.xml", {"options":{"endpoint":"http://172.16.255.12/vsaWS/KaseyaWS.asmx"}});
 
 router.use('/soap', mwPrepare);
 router.post('/soap', auth);

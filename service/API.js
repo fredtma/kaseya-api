@@ -13,7 +13,6 @@ module.exports = class API
 
     cycle(req, res, next)
     {
-        console.log('cycle');
         this.req = req;
         this.res = res;
         this.next= next;
@@ -24,7 +23,7 @@ module.exports = class API
         options = options||this.options;
         return new Promise(function(resolve, reject){
             soap.createClient(url, options, function(err, client) {
-                console.log("DESCRIPT", client.describe(), err);
+
                 if(err) reject(err, client);
                 resolve(client);
             });
